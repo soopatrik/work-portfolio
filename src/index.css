@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Patrik Rehák Portfolio Design System
+   Content-first design with elegant purple accents
+   All colors MUST be HSL for consistent theming
+*/
+
+@layer base {
+  :root {
+    /* Neutral foundation - clean whites and sophisticated grays */
+    --background: 0 0% 100%;
+    --foreground: 220 15% 15%;
+    
+    /* Surface layers for depth */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+    --surface: 220 10% 98%;
+    --surface-foreground: 220 15% 25%;
+    
+    /* Interactive elements */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+    
+    /* Elegant purple accent - used sparingly */
+    --primary: 270 60% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-muted: 270 60% 95%;
+    --primary-hover: 270 60% 40%;
+    
+    /* Secondary system - subtle grays */
+    --secondary: 220 10% 96%;
+    --secondary-foreground: 220 15% 25%;
+    --secondary-hover: 220 10% 92%;
+    
+    /* Muted elements */
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 15% 45%;
+    
+    /* Status colors */
+    --accent: 270 60% 90%;
+    --accent-foreground: 270 60% 45%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Borders and inputs */
+    --border: 220 10% 90%;
+    --input: 220 10% 94%;
+    --ring: 270 60% 45%;
+    
+    /* Glass morphism effects */
+    --glass-bg: 0 0% 100% / 0.8;
+    --glass-border: 220 10% 90% / 0.2;
+    --glass-shadow: 0 8px 32px 0 rgb(31 38 135 / 0.08);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(270 60% 45%), hsl(270 60% 55%));
+    --gradient-surface: linear-gradient(135deg, hsl(220 10% 98%), hsl(220 10% 96%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(220 10% 98%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-glow: 0 0 20px hsl(270 60% 45% / 0.25);
+    
+    /* Typography scale */
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    
+    /* Animations */
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme - sophisticated dark grays with rich purple glow */
+    --background: 220 15% 6%;
+    --foreground: 220 10% 95%;
+    
+    /* Dark surface layers */
+    --card: 220 15% 8%;
+    --card-foreground: 220 10% 95%;
+    --surface: 220 15% 10%;
+    --surface-foreground: 220 10% 85%;
+    
+    /* Dark interactive elements */
+    --popover: 220 15% 8%;
+    --popover-foreground: 220 10% 95%;
+    
+    /* Rich purple with enhanced saturation in dark mode */
+    --primary: 270 70% 55%;
+    --primary-foreground: 220 15% 6%;
+    --primary-muted: 270 70% 15%;
+    --primary-hover: 270 70% 60%;
+    
+    /* Dark secondary system */
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 220 10% 85%;
+    --secondary-hover: 220 15% 16%;
+    
+    /* Dark muted elements */
+    --muted: 220 15% 12%;
+    --muted-foreground: 220 10% 55%;
+    
+    /* Dark status colors */
+    --accent: 270 70% 15%;
+    --accent-foreground: 270 70% 90%;
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 220 15% 6%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 220 15% 6%;
+    
+    /* Dark borders and inputs */
+    --border: 220 15% 18%;
+    --input: 220 15% 12%;
+    --ring: 270 70% 55%;
+    
+    /* Dark glass morphism */
+    --glass-bg: 220 15% 6% / 0.8;
+    --glass-border: 220 10% 25% / 0.2;
+    --glass-shadow: 0 8px 32px 0 rgb(0 0 0 / 0.3);
+    
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(270 70% 55%), hsl(270 70% 65%));
+    --gradient-surface: linear-gradient(135deg, hsl(220 15% 8%), hsl(220 15% 10%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 15% 6%) 0%, hsl(220 15% 8%) 100%);
+    
+    /* Dark shadows */
+    --shadow-glow: 0 0 20px hsl(270 70% 55% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+  }
+  
+  /* Display typography using Space Grotesk */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+  
+  /* Code blocks and monospace */
+  code, pre {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-variant-ligatures: common-ligatures;
+  }
+}
+
+@layer components {
+  /* Glass morphism utility */
+  .glass {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(12px) saturate(150%);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--glass-shadow);
+  }
+  
+  /* Performance metrics chips */
+  .metric-chip {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary;
+  }
+  
+  /* Hover animations */
+  .hover-lift {
+    @apply transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-glow;
+  }
+  
+  /* Focus states */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  /* Smooth scrolling */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
